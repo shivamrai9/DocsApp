@@ -10,7 +10,7 @@ function Foreground() {
         tag: {
             isOpen: true,
             tagTitle: "download Now",
-            tagcolor:"green"
+            tagcolor:"yellow"
         }
     },
         {desc: "Lorem ipsum dolor sit amet consectetur adipisicing.", 
@@ -19,7 +19,7 @@ function Foreground() {
         tag: {
             isOpen: true,
             tagTitle: "download later",
-            tagcolor:"green"
+            tagcolor:"purple"
         }
     },
         {desc: "Lorem ipsum dolor sit amet consectetur adipisicing.", 
@@ -28,7 +28,7 @@ function Foreground() {
         tag: {
             isOpen: true,
             tagTitle: "download later",
-            tagcolor:"blue"
+            tagcolor:"pink"
         }
     },
         {desc: "Lorem ipsum dolor sit amet consectetur adipisicing.", 
@@ -37,14 +37,14 @@ function Foreground() {
         tag: {
             isOpen: true,
             tagTitle: "download later",
-            tagcolor:"green"
+            tagcolor:"violet"
         }
     },
     ]
   return (
     <div ref={ref} className='fixed z-[3] w-full h-full top-0 left-0 flex flex-wrap gap-5'>
         {data.map((item,index)=>(
-        <Card data={item} reference={ref}/>
+        <Card key={item} data={item} reference={ref}/>
         ))}
       </div>
   )

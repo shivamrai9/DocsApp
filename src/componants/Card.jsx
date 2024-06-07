@@ -5,6 +5,15 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion } from "framer-motion"
 
 function Card({ data , reference}) {
+
+   // Extract color and title from the data
+   const { tagcolor, tagTitle } = data.tag;
+
+
+  const dynamicStyle = {
+    backgroundColor: tagcolor,
+  };
+
   return (
     <motion.div drag dragConstraints={reference} whileDrag={{scale: 1.1}} dragElastic={0.2}
     dragTransition={{bounceDamping: 10,bounceStiffness: 100}} className=' relative flex-shrink-0  overflow-hidden w-60 h-72 rounded-[30px] text-white px-5 py-10 bg-zinc-900/90'>
@@ -20,8 +29,8 @@ function Card({ data , reference}) {
           </span>
         </div>
         {data.tag.isOpen && (
-          <div className={`tag flex justify-center items-center w-full py-4 ${data.tag.tagcolor === "blue" ? "bg-blue-600" : "bg-green-600"} `}>
-            <h3 className='text-md font-semibold'>{data.tag.tagTitle}</h3>
+          <div style={dynamicStyle} className={`tag flex justify-center items-center w-full py-4  `}>
+            <h3 className='text-md font-semibold'>{tagTitle}</h3>
           </div>
         )}
       </div>
